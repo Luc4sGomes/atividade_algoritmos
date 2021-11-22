@@ -39,7 +39,7 @@ public class KruskalMST {
         return weight;
     }
 
-    private boolean check(EdgeWeightGraph G) {
+    private boolean check(EdgeWeightedGraph G) {
 
         double total = 0.0;
         for(Edge e: edges()){
@@ -64,6 +64,7 @@ public class KruskalMST {
             int v = e.either(), w = e.other(v);
             if(uf.find(v) != uf.find(w)) {
                 System.err.println("Not a spanning forest");
+                return false;
             }
         }
 
